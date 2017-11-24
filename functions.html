@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Getting Started with JavaScript</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        body {padding: 30px;}
+    </style>
+</head>
+<body>
+
+    <div class="jumbotron text-center">
+        <button type="button" class="btn btn-danger" onclick="saySomething('first button')">
+            My Button
+        </button>
+        <button type="button" class="btn btn-danger" onclick="saySomething('second button')">
+            My 2nd Button
+        </button>
+    </div>
+
+    <!--))))) start javascript (((((-->
+    <script>
+      function saySomething(message = 'goodbye', whisper =false) {  //goodbye by default
+        if (whisper) {
+        console.log(`%c${message}`, 'font-size:15px');
+      } else {
+        console.log(message);
+      }
+      }
+      saySomething('hello', true);
+      saySomething();
+
+      //function squared(a) {
+      //  return a * a;
+      //}
+      //console.log(squared(3));
+      //const newSq = squared(3);
+      //console.log(newSq);
+
+      const squared = function (a) {    // const squared =(a) => {  new way to write function in ES 6
+        return a * a;
+      }
+      const otherSq = squared;
+
+      punch();            // function are hoisted
+      function punch() {
+        console.log('punch here!');
+      }
+    </script>
+
+</body>
+</html>

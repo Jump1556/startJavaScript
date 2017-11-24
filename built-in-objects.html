@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Getting Started with JavaScript</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        body {padding: 30px;}
+    </style>
+</head>
+<body>
+
+    <!--))))) start javascript (((((-->
+    <script>
+        const first = 'this is a string';
+        const second = String('this is a string');
+        //console.log('this is a string'.toUpperCase());
+        //console.log(String('this is a string').toUpperCase());
+
+        //console.log(first === second);
+
+        console.groupCollapsed('Primitives vs Objects');
+          console.log(first == second);
+          console.log(
+            typeof first,
+            typeof String('bla'));
+        console.groupEnd();
+
+        //strings
+        const sentence = 'this is my sentence';
+        console.groupCollapsed('String');
+          console.log(first.toUpperCase());
+          console.log(second.toLowerCase());
+          //console.log(sentence.startWith('this is'));
+          console.log('0'.repeat(20));
+          console.log('look here      '.trim());  //take away spaces from the end
+        console.groupEnd();
+
+        //numbers and math
+        console.group('Numbers and Math');
+          console.log(1..toString());
+          console.log((1).toString());
+          console.log(Number.isInteger(5));
+          console.log(Number.isInteger(5.43));
+          console.log((1.563928).toFixed(2)); //gives 2 decimal points
+          console.log(
+            Math.random().toFixed(2),
+            Math.ceil(1.56),
+            Math.floor(6.3)
+          );
+        console.groupEnd();
+
+        //arrays
+        const myArr = ['chris', 'nick', 'asya'];
+        console.group('Arrays');
+          console.log(myArr.length);
+          console.log(myArr.join('-'));
+          console.log(myArr.push('ado'), myArr);  //add item
+          console.log(myArr.pop('ado'),myArr);    //del item
+
+          myArr.forEach(function(user) {          //loop through array
+            console.log(user);
+          });
+          myArr.forEach((user) => console.log(user));  //same loop
+        console.groupEnd();
+
+    </script>
+
+</body>
+</html>
