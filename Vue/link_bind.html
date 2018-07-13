@@ -1,0 +1,36 @@
+  <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Vue.js</title>
+  <script src="vue.js"></script>
+</head>
+<body>
+	
+  <div id="app">
+    <h1 v-once> {{ title }} </h1>      <!-- to initialize value just once. -->
+    <p> {{ sayHi() }} - <a v-bind:href="link">Google</a></p>   
+    <hr>
+    <p v-html="finishedLink"></p>    <!-- to render html value. -->
+  </div>.         
+
+  <script>
+  	new Vue({
+	  el: '#app',  //el reserved word and string
+	  data: {
+	    title: 'My first Vue app.',   // data is object
+	    link: 'https://google.com',
+      finishedLink: '<a href="https://google.com">Google</a>'    //to render html tags
+    }, 
+    methods: {
+      sayHi: function() { 
+        this.title = "Hello";
+        return this.title;
+      }
+    }
+    });
+  </script>
+</body>
+</html>
